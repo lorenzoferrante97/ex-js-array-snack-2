@@ -46,3 +46,5 @@ const books = [
 ];
 
 // start code
+
+const somma = (num1, num2) => num1 + num2;
