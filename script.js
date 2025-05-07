@@ -87,10 +87,19 @@ const sortAuthors = (allAdults, authors) => {
 };
 
 const authors = books.map((book) => book.author);
-console.log('authors: ', authors);
+// console.log('authors: ', authors);
 
 const areAuthorsAdults = authors.every((author) => author.age >= 18);
-console.log('all authors are adults? ', areAuthorsAdults);
+// console.log('all authors are adults? ', areAuthorsAdults);
 
 const sortedAuthors = sortAuthors(areAuthorsAdults, authors);
-console.log('sortedAuthors: ', sortedAuthors);
+// console.log('sortedAuthors: ', sortedAuthors);
+
+// SNACK 4 ---------------------------------------
+
+const ages = authors.map((author) => author.age);
+console.log('ages: ', ages);
+
+const agesAmount = ages.reduce((acc, age) => acc + age, 0);
+const averageAge = agesAmount / ages.length;
+console.log('averageAge: ', averageAge);
