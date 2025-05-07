@@ -53,7 +53,7 @@ const somma = (num1, num2) => num1 + num2;
 
 const longBooks = books.filter((book) => book.pages > 300);
 const longBooksTitles = longBooks.map((book) => book.title);
-console.log(longBooksTitles);
+// console.log(longBooksTitles);
 
 // SNACK 2 ----------------------------------------
 
@@ -71,7 +71,26 @@ const discountedBooks = availableBooks.map((book) => {
 
   return { ...book, price: updatedPrice };
 });
-console.log('discountedBooks: ', discountedBooks);
+// console.log('discountedBooks: ', discountedBooks);
 
 const fullPricedBook = discountedBooks.find((book) => isFullPrice(book));
-console.log('full price book: ', fullPricedBook);
+// console.log('full price book: ', fullPricedBook);
+
+// SNACK 3 ---------------------------------------
+
+const sortAuthors = (allAdults, authors) => {
+  // let sortedAuthors = [...authors];
+  allAdults ? authors.sort((auth1, auth2) => auth1.age - auth2.age) : authors.sort((auth1, auth2) => auth2.age - auth1.age);
+
+  // return sortedAuthors;
+  return authors;
+};
+
+const authors = books.map((book) => book.author);
+console.log('authors: ', authors);
+
+const areAuthorsAdults = authors.every((author) => author.age >= 18);
+console.log('all authors are adults? ', areAuthorsAdults);
+
+const sortedAuthors = sortAuthors(areAuthorsAdults, authors);
+console.log('sortedAuthors: ', sortedAuthors);
