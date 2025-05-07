@@ -47,4 +47,10 @@ const books = [
 
 // start code
 
+// SNACK 1 ----------------------------------------
+
 const somma = (num1, num2) => num1 + num2;
+
+const longBooks = books.filter((book) => book.pages > 300);
+const longBooksTitles = longBooks.map((book) => book.title);
+console.log(longBooksTitles);
